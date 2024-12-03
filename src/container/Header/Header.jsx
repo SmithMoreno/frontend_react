@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { images } from "../../constants";
 import "./Header.scss";
+import { AppWrap } from "../../wrapper/AppWrapp";
 
 const info = {
   greeting: "Hi there, I'm",
@@ -70,4 +71,4 @@ const Header = () => {
     </div>
   );
 };
-export default Header;
+export default AppWrap(Header, "home");
