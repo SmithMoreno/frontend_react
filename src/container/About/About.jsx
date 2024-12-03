@@ -1,29 +1,18 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import { images } from "../../constants";
+import { urlFor, client } from "../../clients/client";
 import "./About.scss";
-const about = [
-  {
-    title: "Mobile App Developer",
-    description:
-      "Focused on building high-performance mobile applications using React Native, ensuring smooth user experiences.",
-    imgUrl: images.about01,
-  },
-  {
-    title: "Frontend Developer",
-    description:
-      "Skilled in creating responsive and dynamic user interfaces with React Native, delivering clean and efficient code.",
-    imgUrl: images.about02,
-  },
-  {
-    title: "UI/UX Designer",
-    description:
-      "Passionate about designing intuitive and visually appealing user experiences that prioritize both aesthetics and functionality.",
-    imgUrl: images.about03,
-  },
-];
 
 const About = () => {
+  const [about, setAbout] = useState([]);
+
+  useEffect(() => {
+    const query = '*[_type == "abouts"]';
+
+    client.fetch(query).then((data) => setAbout(data));
+
+    setAbout(about);
+  }, []);
   return (
     <>
       <h2 className="head-text">
@@ -40,7 +29,7 @@ const About = () => {
             className="app__profile-item"
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title} />
+            <img src={urlFor(about.imgUrl)} alt={about.title} />
             <h2 className="bold-text" style={{ marginTop: 20 }}>
               {about.title}
             </h2>
