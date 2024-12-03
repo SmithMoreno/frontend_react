@@ -3,11 +3,12 @@ import { images } from "../../constants";
 import "./Header.scss";
 
 const info = {
-  saludo: "Hello, I'm",
-  emoj: "👋",
+  greeting: "Hi there, I'm",
+  emoji: "👋",
   name: "Smith",
-  title: "App Mobile Developer with React.js",
+  title: "React Native Mobile App Developer",
 };
+
 const scaleVariants = {
   whileInView: {
     scale: [0, 1],
@@ -29,9 +30,9 @@ const Header = () => {
       >
         <div className="app__header-badge">
           <div className="badge-cmp app__flex">
-            <span>{info.emoj}</span>
+            <span>{info.emoji}</span>
             <div style={{ marginLeft: 20 }}>
-              <p className="p-text">{info.saludo}</p>
+              <p className="p-text">{info.greeting}</p>
               <h1 className="head-text">{info.name}</h1>
             </div>
           </div>
