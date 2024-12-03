@@ -49,7 +49,7 @@ export default {
   about02,
   about03,
   about04,
-  profile,
+  profile, // you can change this to your profile image
   circle,
   logo,
   adidas,
