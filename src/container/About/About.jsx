@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { urlFor, client } from "../../clients/client";
 import "./About.scss";
 import { AppWrap } from "../../wrapper/AppWrapp";
+import { MotionWrap } from "../../wrapper/MotionWrap";
 
 const About = () => {
   const [about, setAbout] = useState([]);
@@ -44,4 +45,8 @@ const About = () => {
   );
 };
 
-export default AppWrap(About, "about"); 
+export default AppWrap(
+  MotionWrap(About, "app__about"),
+  "about",
+  "app__whitebg"
+);

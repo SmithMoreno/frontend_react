@@ -4,6 +4,7 @@ import { motion } from 'framer-motion'
 import { urlFor, client } from '../../clients/client'
 import { AppWrap } from '../../wrapper/AppWrapp'
 import './Work.scss'
+import { MotionWrap } from '../../wrapper/MotionWrap'
 
 const Work = () => { 
   const [works, setWorks] = useState([]);
@@ -104,4 +105,9 @@ const Work = () => {
   )
 } 
 
-export default AppWrap(Work, 'work') 
+export default AppWrap(
+  MotionWrap(Work, "app__works"),
+  "work",
+  "app__primarybg"
+);
+ 
