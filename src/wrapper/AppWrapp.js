@@ -9,7 +9,7 @@ import { NavigationDots, SocialMedia } from '../components';
         <Component />
 
         <div className="copyright">
-          <p className="p-text">@2024 Ewirlin Smith </p>
+          <p className="p-text"> <code>@2024</code> <strong>E..Smith</strong> </p>
           <p className="p-text">All rights reserved</p>
         </div>
       </div>
